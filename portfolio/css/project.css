@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Projects Section Start */
+.project-container {
+       width: 60%;
+       height: 400px;
+       margin: auto;
+       /* background-color: aquamarine; */
+       display: grid;
+       grid-template-columns: repeat(2,1fr);
+       grid-gap: 20px;
+}
+.project-container .projects {
+    width: 100%;
+    box-shadow: 0 0 4px #000;
+    border-radius: 5px;
+    font-family: cursive;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.anchor {
+    cursor: pointer;
+    text-decoration: none;
+    border: 1px solid #00f;
+    color: #00f;
+    padding: 5px 20px;
+    margin-top: 8%;
+}
+.anchor:hover {
+    background: #00f;
+    color: #fff;
+    transition: 0.5s;
+}
+/* Projects Section End */
+
+/* Mediq Query */
+@media (max-width:768px) {
+    .project-container {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+    .project-container .projects {
+        padding: 1rem;
+    }
+}

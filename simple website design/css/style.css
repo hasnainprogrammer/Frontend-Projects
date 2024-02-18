@@ -1,0 +1,184 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Section */
+.wrapper {
+    width: 100%;
+    height: 70px;
+    background: #000;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.wrapper .logo h2 {
+    font-family: tahoma;
+    color: #fff;
+}
+
+.wrapper .nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.wrapper .nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 0 20px;
+    font-family: tahoma;
+    font-size: 1.3rem;
+}
+
+.wrapper .nav ul li a:hover {
+    text-decoration: underline;
+    transition: 0.6s;
+}
+
+
+/* Content Section */
+.content {
+    width: 100%;
+    height: 450px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('3.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.content h1 {
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 3rem;
+    margin-left: 15%;
+}
+
+.content p {
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.1rem;
+    margin-left: 15%;
+}
+
+.content button {
+    margin-left: 25%;
+    padding: 8px 40px;
+    border: 1px solid #fff;
+    font-size: 1.1rem;
+}
+
+/* Courses Section */
+.heading {
+    font-family: tahoma;
+    text-align: center;
+    text-decoration: underline;
+    color: #333;
+}
+
+.courses {
+    width: 80%;
+    height: auto;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    grid-row-gap: 20px;
+}
+
+.courses .box {
+    width: 95%;
+    height: 150px;
+    box-shadow: 0 0 4px #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.courses .box h3 {
+    font-family: tahoma;
+}
+
+.courses .box p {
+    text-align: center;
+    margin-top: 3%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.1rem;
+}
+
+.courses .box button {
+    margin-top: 5%;
+    padding: 8px 30px;
+    background: #333;
+    color: #fff;
+    border: 1px solid #333;
+}
+
+/* Contact Section */
+.form {
+    width: 35%;
+    height: 300px;
+    box-shadow: 0 0 4px #333;
+    margin: auto;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form label {
+    font-family: tahoma;
+    margin-right: 50%;
+    font-size: 1.1rem;
+}
+
+.form input {
+    width: 60%;
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.form input:focus {
+    box-shadow: 0 0 2px 1px blue;
+    outline: none;
+}
+
+.form button {
+    margin-top: 5%;
+    padding: 10px 40px;
+    background: #333;
+    color: #fff;
+    border: 1px solid #333;
+
+}
+
+/* Footer */
+.footer {
+    margin-top: 5%;
+    width: 100%;
+    height: 30px;
+    background: #333;
+    color: #fff;
+    font-family: tahoma;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/* Media Query */
+@media (max-width:500px) {
+    .courses {
+        grid-template-columns: 1fr;
+    }
+    .form {
+        width: 60%;
+    }
+}

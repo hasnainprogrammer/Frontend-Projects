@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+ /* Navbar With Humbeger Menu  */
+.navbar {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    background-color: rgb(19, 19, 19);
+
+}
+
+.navbar span {
+    width: 45px;
+    height: 5px;
+    background: #fff;
+    border-radius: 10px;
+    margin: 3px;
+    margin-right: 1rem;
+}
+.links {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgb(10, 10, 10);
+    display: none;
+}
+.showlinks {
+    display: flex;
+}
+.links a {
+    text-decoration: none;
+    font-family: tahoma;
+    width: 100%;
+    text-align: center;
+    font-size: 1.3rem;
+    padding: 10px 0;
+    color: #fff;
+}
+.links a:hover {
+    background: #fff;
+    color: black;
+}
+
+/* Collapse Using JavaScript */
+.text {
+    display: none;
+}
+.collapse{
+    display: block;
+}

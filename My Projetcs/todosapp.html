@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo's App</title>
+    <style>
+        /* Todo List Using JavaScript */
+        body {
+            text-align: center;
+        }
+
+        .todolist {
+            width: 80%;
+            padding: 20px;
+        }
+
+        .todolist input {
+            width: 40%;
+            padding: 5px 20px;
+            border: 1px solid #ccc;
+            outline: none;
+            font-family: tahoma;
+            font-size: 1.1rem;
+        }
+
+        .todolist button {
+            border: 1px solid #00f;
+            padding: 8px 30px;
+            background: #00f;
+            color: #fff;
+            text-align: center;
+            cursor: pointer;
+            font-family: tahoma;
+            font-size: 1.1rem;
+            border-radius: 4px;
+        }
+
+        li {
+            font-family: tahoma;
+            font-size: 1.1rem;
+            display: flex;
+            margin-left: 8%;
+        }
+
+        button {
+            border: 1px solid #00f;
+            padding: 3px 20px;
+            background: #00f;
+            color: #fff;
+            text-align: center;
+            cursor: pointer;
+            font-family: tahoma;
+            font-size: 1.1rem;
+            border-radius: 4px;
+        }
+
+        h2 {
+            font-family: tahoma;
+            font-size: 1.9rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Todo List Using JavaScript -->
+    <div class="todolist">
+        <h2>Todo's List</h2>
+        <input type="text" placeholder="Enter Items to the List" id="input"><br><br><br>
+        <button id="btn">Add Items</button>
+    </div><br><br>
+
+
+
+    <script>
+        let body = document.body;
+        let input = document.querySelector('#input');
+        let btn = document.querySelector('#btn');
+        btn.addEventListener('click', () => {
+            let li = document.createElement('li');
+            li.innerText = input.value;
+            body.append(li);
+            let clearbtn = document.createElement('button');
+            clearbtn.innerText = 'Clear';
+            body.append(clearbtn)
+            clearbtn.addEventListener('click', () => {
+                li.remove()
+                clearbtn.remove()
+            })
+            if (input.value == '') {
+                li.remove()
+                clearbtn.remove()
+            }
+            input.value = ''
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form Modal</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        button {
+            padding: 8px 20px;
+            outline: none;
+            border: 1px solid #00f;
+            background: #00f;
+            color: #fff;
+            border-radius: 20px;
+            font-size: 1.1rem;
+            font-family: tahoma;
+            cursor: pointer;
+        }
+
+        .login-form {
+            width: 40%;
+            height: 230px;
+            box-shadow: 0 0 4px #000;
+            border-radius: 10px;
+            padding: 5px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            position: absolute;
+            top:-15%;
+            transform: scale(0.01);
+            visibility: hidden;
+        }
+
+        .show-form {
+            position: absolute;
+            top: 25%;
+            transform: scale(1);
+            transition: 0.3s;
+            visibility: visible;
+            z-index: 1;
+        }
+
+        .login-form input {
+            width: 70%;
+            padding: 8px 20px;
+            outline: none;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 1.1rem;
+        }
+        .login-form input:focus {
+            box-shadow: 0 0 4px rgb(2, 128, 205);
+        }
+        .login-form  button {
+            padding: 8px 40px;
+            outline: none;
+            border: 1px solid #00f;
+            background: #00f;
+            color: #fff;
+            border-radius: 20px;
+            font-size: 1.1rem;
+            font-family: tahoma;
+            cursor: pointer;
+        }
+
+        .close-form {
+            cursor: pointer;
+            position: absolute;
+            transform: scale(0.80);
+            top: -10%;
+            right: 3%;
+        }
+        .close-form:hover {
+            transform: scale(1);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login-form">
+        <h1 class="close-form">&times;</h1><br><br><br>
+        <input type="email" id="email" placeholder="Enter Your Email"><br>
+        <input type="password" id="password" placeholder="Enter Your Password"><br><br>
+        <button id="login-btn">Login</button>
+    </div><br><br><br><br><br><br>
+    <button id="login">Login to Your Account</button>
+
+
+
+    <script>
+        let login = document.querySelector('#login');
+        let loginBtn = document.querySelector('.login-btn');
+        let loginForm = document.querySelector('.login-form');
+        let closeForm = document.querySelector('.close-form')
+        login.addEventListener('click', () => {
+            loginForm.classList.add('show-form');
+            login.remove();
+        })
+        closeForm.addEventListener('click', () => {
+            loginForm.remove();
+        })
+    </script>
+
+</body>
+
+</html>

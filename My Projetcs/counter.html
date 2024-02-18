@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        button {
+            padding: 8px 50px;
+            border: 1px solid #000;
+            background: #000;
+            color: #fff;
+            margin: 0 20px;
+            border-radius: 5px;
+            font-size: 1.5rem;
+            font-family: tahoma;
+            cursor: pointer;
+        }
+
+        span {
+            font-size: 3rem;
+            font-family: tahoma;
+            margin-left: 45%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="counter">
+        <span id="count">0</span><br><br>
+        <button id="incbtn">+</button>
+        <button id="decbtn">-</button>
+    </div>
+
+    <script>
+        let value = 1
+        let count = document.querySelector('#count')
+        let incbtn = document.querySelector('#incbtn')
+        let decbtn = document.querySelector('#decbtn')
+        let resetbtn = document.querySelector('#resetbtn')
+        incbtn.addEventListener('click', () => {
+            count.innerHTML = value
+            value++;
+            if (value > 0) {
+                count.style.color = 'green'
+            }
+        })
+        decbtn.addEventListener('click', () => {
+            count.innerHTML = value
+            value--;
+            if (value < 0) {
+                count.style.color = 'red'
+            }
+        })
+    </script>
+</body>
+
+</html>

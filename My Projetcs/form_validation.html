@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        /* Form Validation with JavaScript  */
+        .form {
+            width: 30%;
+            height: 400px;
+            box-shadow: 0 0 4px #333;
+            border-radius: 10px;
+            margin: 50px auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: tahoma;
+        }
+
+        #error1,
+        #error2 {
+            font-family: Arial, Helvetica, sans-serif;
+            color: red;
+            font-style: 1.1rem;
+            display: none;
+        }
+        
+        .form label {
+            font-size: 1.1rem;
+            margin-right: 45%;
+            margin-top: 3%;
+        }
+
+        .form label::after {
+            content: ':';
+        }
+
+        .form input {
+            width: 60%;
+            padding: 5px 20px;
+            border: 1px solid #ccc;
+            outline: none;
+            font-size: 1.1rem;
+        }
+
+        .form input::placeholder {
+            color: rgb(167, 165, 165);
+        }
+
+        .form input:focus {
+            box-shadow: 0 0 2px 1px blue;
+        }
+
+        .form a {
+            text-decoration: none;
+            margin-top: 8%;
+            width: 70%;
+            padding: 5px 20px;
+            background: blue;
+            border: 1px solid #00f;
+            text-align: center;
+            color: #fff;
+            font-size: 1.1rem;
+            font-family: tahoma;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Form Validation with JavaScript -->
+    <div class="form">
+        <div id="error1">Please Fill All the Fields</div>
+        <div id="error2">Please Enter a Correct Length Password</div>
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Enter Your Name">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter Your Password">
+        <label for="email">Email</label>
+        <input type="text" id="email" placeholder="Enter Your Email">
+        <label for="number">Phone No</label>
+        <input type="number" id="number" placeholder="Enter Your Phone No">
+        <a href="#" id="btn">Submit</a>
+    </div>
+
+
+    <script>
+
+        // Form Validation With JavaScript
+        let error1 = document.querySelector('#error1');
+        let error2 = document.querySelector('#error2');
+        let btn = document.querySelector('#btn');
+        let name = document.querySelector('#name');
+        let password = document.querySelector('#password');
+        let email = document.querySelector('#email');
+        let number = document.querySelector('#number');
+        btn.addEventListener('click', () => {
+            if (name.value == '' || password.value == '') {
+                error1.style.display = 'block';
+                return false;
+            }
+            if (email.value == '' || number.value == '') {
+                error1.style.display = 'block';
+                return false;
+            }
+            if (password.value.length < 6 || password.value.length > 20) {
+                error2.style.display = 'block';
+                return false;
+            }
+            else {
+                error1.style.display = 'none';
+                error2.style.display = 'none';
+                name.value = '';
+                password.value = '';
+                email.value = '';
+                number.value = '';
+                btn.href = 'login_successful.html';
+                return true;
+            }
+        })
+
+    </script>
+</body>
+
+</html>
